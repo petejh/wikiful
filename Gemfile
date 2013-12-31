@@ -46,3 +46,6 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Use Faker to seed the development database
+gem 'faker'
