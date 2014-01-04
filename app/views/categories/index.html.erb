@@ -1,1 +1,7 @@
 <h1>This is the index view for Categories</h1>
+<% @categories.each do |category| %>
+  <div>
+    <h3><%= category.name %></h3>
+    <p>Number of articles: <%= category.articles.count %></p>
+  </div>
+<% end %>
