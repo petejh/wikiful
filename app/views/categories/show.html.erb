@@ -1,1 +1,10 @@
 <h1>This is the show view for Categories</h1>
+<div>
+  <h1><%= @category.name %></h1>
+  <% @category.articles.order(updated_at: :desc).each do |article| %>
+    <p>
+      <%= link_to article.title, article %>
+      (<%= article.updated_at %>)
+    </p>
+  <% end %>
+</div>
