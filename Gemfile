@@ -49,3 +49,8 @@ end
 
 # Use Faker to seed the development database
 gem 'faker'
+
+# Use Twitter Bootstrap to style the app
+gem 'twitter-bootstrap-rails'
+gem 'less-rails'
+gem 'therubyracer'
