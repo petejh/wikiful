@@ -1,2 +1,13 @@
 <h1>Welcome to Wikiful</h1>
-<p>As impressive as this may be now, just wait &rsquo;til we have something to say here!</p>
+<p>Here are some recent articles</p>
+<% @recent_articles.each do |article| %>
+  <div>
+    <p><%= link_to article.title, article %></p>
+    <p>Published on <%= article.updated_at.strftime('%b %d, %Y') %></p>
+    <p>Filed under <% article.categories.each do |category| %>
+      <%= link_to category.name, category %>&nbsp;
+      <% end %>
+    </p>
+    <p><%= truncate(article.content, length: 100) %></p>
+  </div>
+<% end %>
