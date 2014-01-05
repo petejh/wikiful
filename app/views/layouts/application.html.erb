@@ -7,30 +7,39 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class='container'>
-  <div class='row'>
-    <div class='span9'><%= yield %></div>
-    <div class='span3 sidebar'>
-      <div class='my-wikiful'>
-        <h4>Wikiful</h4>
-        <ul>
-          <li><%= link_to 'Write an article', new_article_path %>
-        </ul>
-      </div>
-      <div class='cateogries-sidebar'>
-        <h4>Categories</h4>
-        <ul>
-          <% @categories.each do |category| %>
-            <li><%= link_to category.name, category %></li>
-          <% end %>
-        </ul>
-      </div>
-      <div class='about'>
-        <h4>About Wikiful</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, hic, voluptates, officiis dolorum beatae sequi dolores id fugiat provident eaque quia neque odit magni praesentium excepturi quae vero deserunt laudantium.</p>
+  <div class='navbar navbar-fixed-top'>
+    <div class='navbar-inner'>
+      <div class='container'>
+        <%= link_to 'Wikiful', root_path, :class => 'brand' %>
+        <div style='float: right;'>Eventually, log in/out and sign up links will go here</div>
       </div>
     </div>
   </div>
-</div>
+
+  <div class='container'>
+    <div class='row'>
+      <div class='span9'><%= yield %></div>
+      <div class='span3 sidebar'>
+        <div class='my-wikiful'>
+          <h4>Wikiful</h4>
+          <ul>
+            <li><%= link_to 'Write an article', new_article_path %>
+          </ul>
+        </div>
+        <div class='cateogries-sidebar'>
+          <h4>Categories</h4>
+          <ul>
+            <% @categories.each do |category| %>
+              <li><%= link_to category.name, category %></li>
+            <% end %>
+          </ul>
+        </div>
+        <div class='about'>
+          <h4>About Wikiful</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, hic, voluptates, officiis dolorum beatae sequi dolores id fugiat provident eaque quia neque odit magni praesentium excepturi quae vero deserunt laudantium.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
