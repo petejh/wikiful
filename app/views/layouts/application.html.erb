@@ -43,11 +43,13 @@
         <div class='my-wikiful'>
           <h4>Wikiful</h4>
           <ul>
+            <li><%= link_to 'Browse all articles', articles_path %>
             <li><%= link_to 'Write an article', new_article_path %>
           </ul>
         </div>
-        <div class='cateogries-sidebar'>
+        <div class='categories-sidebar'>
           <h4>Categories</h4>
+          <p><%= link_to 'View all categories', categories_path %></p>
           <ul>
             <% @categories.each do |category| %>
               <li><%= link_to category.name, category %></li>
