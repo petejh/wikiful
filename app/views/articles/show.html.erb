@@ -1,7 +1,9 @@
-<h1>This is the show view for articles.</h1>
+<h1><%= @article.title %></h1>
 <div>
-  <h1><%= @article.title %></h1>
-  <p>Published on <%= @article.created_at.strftime('%b %d, %Y') %></p>
+  <p>
+    Last updated <%= @article.updated_at.strftime('%b %d, %Y at %T %Z (%z)') %>
+    by <%= @article.user %>
+  </p>
   <p>Filed under <% @article_categories.each do |category| %>
     <%= link_to category.name, category %>&nbsp;
     <% end %>
