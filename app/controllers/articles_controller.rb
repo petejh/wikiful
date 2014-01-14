@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @article_categories = @article.categories.order(name: :asc)
   end
 
   def new
