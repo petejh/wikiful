@@ -1,10 +1,11 @@
-<h1>This is the show view for Categories</h1>
+<h1><%= @category.name %></h1>
 <div>
-  <h1><%= @category.name %></h1>
   <% @category_articles.each do |article| %>
+    <h4><%= link_to article.title, article %></h4>
     <p>
-      <%= link_to article.title, article %>
-      (<%= article.updated_at %>)
+      Last updated <%= article.updated_at.strftime('%b %d, %Y at %T %Z (%z)') %>
+      by <%= article.user %>
     </p>
+    <p><%= truncate(article.content, length: 200) %></p>
   <% end %>
 </div>
