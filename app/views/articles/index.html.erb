@@ -1,12 +1,15 @@
-<h1>This is the index view for articles.</h1>
+<h1>Recently updated on Wikiful</h1>
 <% @articles.each do |article| %>
-<div>
-  <h3><%= link_to article.title, article %></h3>
-  <p>Published on <%= article.created_at.strftime('%b %d, %Y') %></p>
-  <p>Filed under <% article.categories.each do |category| %>
-    <%= link_to category.name, category %>&nbsp;
-    <% end %>
-  </p>
-  <p><%= truncate(article.content, length: 200) %></p>
-</div>
+  <div>
+    <h4><%= link_to article.title, article %></h4>
+    <p>
+      Last updated <%= article.updated_at.strftime('%b %d, %Y at %T %Z (%z)') %>
+      by <%= article.user %>
+    </p>
+    <p>Filed under <% article.categories.order(name: :asc).each do |category| %>
+      <%= link_to category.name, category %>&nbsp;
+      <% end %>
+    </p>
+    <p><%= truncate(article.content, length: 200) %></p>
+  </div>
 <% end %>
