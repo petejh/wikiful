@@ -18,7 +18,7 @@
     <%= f.label 'File under at least one category' %>
     <% Category.all.order(name: :asc).each do |category| %>
       <div>
-        <%= check_box_tag 'article[category_ids][]', category.id %>
+        <%= check_box_tag 'article[category_ids][]', category.id, @article.categories.include?(category) %>
         <%= category.name %>
     </div>
     <% end %>
