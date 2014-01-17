@@ -1,5 +1,8 @@
 <h1><%= @article.title %></h1>
 <div>
+  <%= link_to 'Edit this article', edit_article_path(@article), class: 'btn btn-mini' %>
+</div>
+<div>
   <p>
     Last updated <%= @article.updated_at.strftime('%b %d, %Y at %T %Z (%z)') %>
     by <%= @article.user %>

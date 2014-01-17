@@ -2,6 +2,10 @@
 <div>
   <% @category_articles.each do |article| %>
     <h4><%= link_to article.title, article %></h4>
+    <div class='btn-group'>
+      <%= link_to 'Edit this article', edit_article_path(article), class: 'btn btn-mini' %>
+      <%= link_to 'Read full article', article, class: 'btn btn-mini' %>
+    </div>
     <p>
       Last updated <%= article.updated_at.strftime('%b %d, %Y at %T %Z (%z)') %>
       by <%= article.user %>
