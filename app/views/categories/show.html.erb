@@ -8,7 +8,7 @@
     </div>
     <p>
       Last updated <%= article.updated_at.strftime('%b %d, %Y at %T %Z (%z)') %>
-      by <%= article.user %>
+      by <%= article.user.email %>
     </p>
     <p><%= truncate(article.content, length: 200) %></p>
   <% end %>

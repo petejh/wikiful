@@ -5,7 +5,7 @@
 <div>
   <p>
     Last updated <%= @article.updated_at.strftime('%b %d, %Y at %T %Z (%z)') %>
-    by <%= @article.user %>
+    by <%= @article.user.email %>
   </p>
   <p>Filed under <% @article_categories.each do |category| %>
     <%= link_to category.name, category %>&nbsp;
