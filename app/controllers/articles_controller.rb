@@ -16,6 +16,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.user = current_user
     if @article.save
       redirect_to @article, notice: 'New Article added!'
     else
@@ -30,6 +31,7 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
     @article.assign_attributes(article_params)
+    @article.user = current_user
     if @article.save
       redirect_to @article, notice: 'Article successfully updated!'
     else
