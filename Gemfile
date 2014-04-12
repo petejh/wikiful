@@ -52,6 +52,10 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # Use Faker to seed the development database
 gem 'faker'
 
+# Use Figaro to manage environment configuration
+# http://github.com/laserlemon/figaro
+gem 'figaro'
+
 # Use Twitter Bootstrap to style the app
 gem 'twitter-bootstrap-rails'
 gem 'less-rails'

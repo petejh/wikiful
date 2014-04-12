@@ -9,4 +9,5 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Wikiful::Application.config.secret_key_base = '54621b0f4cc2d2c51dec790606cb63556e5a1b92df1ea0a0f619acec3fa236a5f22224d8c968e7aaa9d5b477c46a8da21726ce5f5e2343a23f5d715796a025c3'
+Wikiful::Application.config.secret_key_base = ENV['SECRET_TOKEN']
+
